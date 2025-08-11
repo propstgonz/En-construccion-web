@@ -18,9 +18,9 @@ import Header from "../components/Header.astro";
     <meta property="og:image" content="../assets/construccion-web.jpg" />
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Header />
-    <main class="flex-1 flex items-center justify-center">
+    <main class="flex-grow">
       <slot />
     </main>
     <Footer />
