@@ -1,7 +1,17 @@
 services:
-  web:
-    container_name: testweb
+  baronette-web:
+    container_name: baronette-web
     build: .
     restart: unless-stopped
-    ports:
-      - "4321:4321"
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.baronette.rule=Host(`baronette.es`) || Host(`www.baronette.es`)"
+      - "traefik.http.routers.baronette.entrypoints=websecure"
+      - "traefik.http.routers.baronette.tls=true"
+      - "traefik.http.services.baronette.loadbalancer.server.port=4321"
+
+networks:
+  traefik-net:
+    external: true
