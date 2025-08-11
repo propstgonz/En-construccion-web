@@ -1,3 +1,9 @@
+---
+import { getServerIp } from "../scripts/getServerIp.ts";
+
+const serverIp = await getServerIp();
+---
+
 <footer
   class="bg-yellow-500 text-center py-6 border-t-4 border-yellow-600 text-sm text-gray-900 shadow-inner"
 >
@@ -8,7 +14,7 @@
     </li>
     <li>
       <strong>IP del servidor:</strong>
-      <span id="server-ip" class="font-mono">Detectando...</span>
+      <span id="server-ip" class="font-mono">{serverIp}</span>
     </li>
     <li>
       <strong>Tu IP:</strong>
@@ -18,5 +24,4 @@
 
   <script src="../scripts/getClientIp.ts"></script>
   <script src="../scripts/getServerHost"></script>
-  <script src="../scripts/getServerIp.ts"></script>
 </footer>
