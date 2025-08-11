@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Docker compose
 docker-compose.yml
+
+# Gitzen tool
+gitzen.config.json
