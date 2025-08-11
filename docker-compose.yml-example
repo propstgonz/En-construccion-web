@@ -1,0 +1,7 @@
+services:
+  en-construccion-web:
+    container_name: en-construccion-web
+    build: .
+    restart: unless-stopped
+    ports:
+      - "4321:4321"
