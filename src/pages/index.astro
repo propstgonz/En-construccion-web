@@ -1,0 +1,32 @@
+---
+import Image from "astro/components/Image.astro";
+import Layout from "../layouts/Layout.astro";
+import Construcciongif from "../assets/u-c.gif";
+---
+
+<Layout>
+  <section class="py-10 px-4 sm:py-14">
+    <div class="max-w-2xl mx-auto">
+      <h2
+        class="text-2xl font-bold text-yellow-400 mb-6 border-l-4 border-yellow-400 pl-3"
+      >
+        Sobre el sitio
+      </h2>
+      <div class="bg-gray-100 text-gray-900 p-5 rounded-lg shadow-md leading-relaxed text-center">
+        <p>
+          Este sitio está en construcción. Estamos preparando contenido y
+          funcionalidades para la web.
+        </p>
+				<p>
+					Vuelve pronto!
+				</p>
+        <Image
+          src={Construcciongif}
+          alt="En construcción GIF"
+          class="w-60 h-60 sm:w-[22rem] sm:h-[22rem] object-contain mx-auto mt-6"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

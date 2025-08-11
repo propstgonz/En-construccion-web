@@ -1,0 +1,7 @@
+services:
+  web:
+    container_name: testweb
+    build: .
+    restart: unless-stopped
+    ports:
+      - "4321:4321"

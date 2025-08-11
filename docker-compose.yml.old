@@ -1,0 +1,18 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./web-provisional:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.baronette.rule=Host(`baronette.es`) || Host(`www.baronette.es`)"
+      - "traefik.http.routers.baronette.entrypoints=websecure"
+      - "traefik.http.routers.baronette.tls=true"
+      - "traefik.http.services.baronette.loadbalancer.server.port=80"
+
+networks:
+  traefik-net:
+    external: true
