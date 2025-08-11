@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!--
+    Esta envoltura ocupa la altura completa del <main> (heredada desde Layout)
+    y centra su contenido con flexbox.
+  -->
+  <div class="h-full flex items-center justify-center">
+    <div class="text-center px-6">
+      <h1 class="text-[clamp(4rem,12vw,8rem)] font-extrabold text-red-500 leading-none">404</h1>
+      <p class="mt-4 text-lg text-gray-300">
+        Página no encontrada. Probablemente no exista debido a que la web está en construcción.
+      </p>
+
+      <a
+        href="/"
+        class="mt-6 inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-2 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        aria-label="Volver al inicio"
+      >
+        Volver a la página
+      </a>
+    </div>
+  </div>
+</Layout>
