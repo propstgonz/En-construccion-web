@@ -1,0 +1,9 @@
+---
+import { getServerIp } from "../scripts/getServerIp.ts";
+const serverIp = await getServerIp();
+---
+
+<li>
+  <strong>IP del servidor:</strong>
+  <span id="server-ip" class="font-mono">{serverIp}</span>
+</li>

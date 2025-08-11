@@ -1,7 +1,7 @@
 ---
-import { getServerIp } from "../scripts/getServerIp.ts";
+import ServerIPLabel from "../components/ServerIPLabel.astro";
 
-const serverIp = await getServerIp();
+export const prerender = true;
 ---
 
 <footer
@@ -12,10 +12,14 @@ const serverIp = await getServerIp();
       <strong>Dirección del servidor:</strong>
       <span id="server-host" class="font-mono">Detectando...</span>
     </li>
-    <li>
-      <strong>IP del servidor:</strong>
-      <span id="server-ip" class="font-mono">{serverIp}</span>
-    </li>
+    <ServerIPLabel server:defer>
+      <Fragment slot="fallback">
+        <li>
+          <strong>IP del servidor:</strong>
+          <span>Detectando...</span>
+        </li>
+      </Fragment>
+    </ServerIPLabel>
     <li>
       <strong>Tu IP:</strong>
       <span id="client-ip" class="font-mono">Detectando...</span>
