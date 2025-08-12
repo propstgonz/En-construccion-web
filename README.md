@@ -1,46 +1,78 @@
-# Astro Starter Kit: Basics
 
-```sh
-npm create astro@latest -- --template basics
+# En‑construccion‑web
+
+## Descripción
+Este repositorio contiene una página temporal de tipo "En construcción", desarrollada con **Astro**. Está diseñada para informar a los visitantes de que el sitio web definitivo se encuentra en desarrollo.  
+La plantilla base utilizada corresponde al **Astro Starter Kit: Basics**.
+
+## Requisitos
+- Node.js v16 o superior (recomendado v18+)
+- npm
+- (Opcional) Docker y Docker Compose
+
+## Instalación y uso
+
+### Clonar el repositorio
+```bash
+git clone https://github.com/propstgonz/En-construccion-web.git
+cd En-construccion-web
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+### Instalación de dependencias
+```bash
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Ejecución en modo desarrollo
+```bash
+npm run dev
+```
+El servidor se iniciará por defecto en `http://localhost:4321`.
 
-## 🧞 Commands
+### Generar versión de producción
+```bash
+npm run build
+npm run preview
+```
 
-All commands are run from the root of the project, from a terminal:
+### Ejecución mediante Docker
+El repositorio incluye un `Dockerfile` y un archivo de ejemplo `docker-compose.yml-example`.
+```bash
+docker-compose -f docker-compose.yml-example up --build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Estructura del proyecto
+```
+.
+├── .vscode/                     # Configuración para Visual Studio Code
+├── public/                      # Archivos estáticos (favicon, imágenes, etc.)
+├── src/
+│   ├── assets/                  # Recursos gráficos
+│   ├── components/              # Componentes reutilizables
+│   ├── layouts/                 # Plantillas de diseño
+│   └── pages/                   # Páginas del sitio
+│   └── scripts/                 # Scripts
+├── astro.config.mjs             # Configuración de Astro
+├── package.json                 # Dependencias y scripts
+├── tsconfig.json                # Configuración TypeScript
+├── Dockerfile
+├── docker-compose.yml-example
+└── README.md
+```
 
-## 👀 Want to learn more?
+## Archivos principales
+- `src/pages/index.astro`: Página principal con el mensaje de "En construcción".
+- `src/layouts/Layout.astro`: Plantilla base para las páginas.
+- `public/favicon.svg`: Icono por defecto del sitio.
+- `Dockerfile` y `docker-compose.yml-example`: Archivos para ejecución en contenedores.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Tecnologías utilizadas
+- Astro
+- HTML
+- CSS
+- (Opcional) TypeScript
+- Docker
+
+## Autor
+**propstgonz**  
+Repositorio: [https://github.com/propstgonz/En-construccion-web](https://github.com/propstgonz/En-construccion-web)
